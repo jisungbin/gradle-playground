@@ -11,4 +11,7 @@ pluginManagement {
   }
 }
 
-include(":playground", ":app")
+include(
+  ":playground",
+  ":app",
+)
