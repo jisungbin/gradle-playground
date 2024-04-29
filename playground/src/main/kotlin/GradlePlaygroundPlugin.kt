@@ -6,8 +6,10 @@ class GradlePlaygroundPlugin : Plugin<Project> {
   override fun apply(target: Project) {
     target.logger.lifecycle("Hello, GradlePlaygroundPlugin!")
     target.tasks.register("testt") {
-      target.configurations.getByName("implementation").dependencies.forEach {
-        target.logger.lifecycle("Dependency: $it")
+      target.configurations.forEach { configuration ->
+        configuration.dependencies.forEach dep@{ dep ->
+          target.logger.lifecycle("[${configuration.name}] Found dependency: ${dep.group}:${dep.name}:${dep.version}")
+        }
       }
     }
   }
