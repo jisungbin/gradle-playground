@@ -1,5 +1,5 @@
 plugins {
-  kotlin("jvm")
+  id("java")
   id("land.sungbin.gradleplayground.plugin") version "1.0.0"
 }
 
