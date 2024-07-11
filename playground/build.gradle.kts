@@ -1,6 +1,6 @@
 plugins {
   `kotlin-dsl`
-  id("com.vanniktech.maven.publish") version "0.28.0"
+  `java-gradle-plugin`
 }
 
 gradlePlugin {
@@ -11,6 +11,9 @@ gradlePlugin {
     }
   }
 }
+
+val testVersion by rootProject.properties
+println("testVersion is $testVersion")
 
 dependencies {
   compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.9.23")
